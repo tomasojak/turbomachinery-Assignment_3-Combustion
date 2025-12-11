@@ -2,9 +2,24 @@
 """
 Created on Tue Mar 15 11:23:39 2022
 
-@author: luuk + Rafael + Adam
+Authors: Rafael Pichler, Adam Zeman, Luuk Altenburg
 
-premixed flame properties
+flame properties
+
+Copyright (c) 2022-2025 Rafael Pichler, Adam Zeman, Luuk Altenburg
+
+This file is part of Combustion assignment 2025-26.
+
+Combustion assignment 2025-26 is free software: you can redistribute it and/or modify it 
+under the terms of the GNU General Public License as published by the Free Software Foundation,
+ either version 3 of the License, or (at your option) any later version.
+
+Combustion assignment 2025-26 is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; 
+without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. 
+See the GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License along with Combustion assignment 2025-26. 
+If not, see <https://www.gnu.org/licenses/>. 
 """
 
 #%% PACKAGES
@@ -226,21 +241,25 @@ if __name__ == "__main__":
     print(f"Running Cantera Version: {ct.__version__}")
     
     # Simulation parameters
-    X_H2s = np.array([0, 100], dtype=int) # fuel hydrogen fraction [%]
-    phis = np.array([0.8, 1, 1.3]) # equivalence ratios [-]
+    X_H2 = np.array([0, 100], dtype=int) # fuel hydrogen fractionS [%]
+    phi = np.array([0.8, 1, 1.3]) # equivalence ratios [-]
     
-    # Run the simulations and collect T_ad and s_l0 in arrays
-    T_ads = []
-    s_l0s = []
-    for X_H2 in X_H2s:
-        for phi in phis:
-            flame = PremixedFlame(phi, X_H2)
-            T_ad = flame.T_ad # Adiabatic temperature [K]
-            s_l0 = flame.s_l0 # Laminar flame speed [m/s]
-            T_ads.append(T_ad)
-            s_l0s.append(s_l0)
-    T_ads = np.array(T_ads)
-    s_l0s = np.array(s_l0s)
+    # Run the simulations and collect nu_u, T_ad and s_l0 in arrays
+    nu_u = []
+    T_ad = []
+    s_l0 = []
+    for X_H2_i in X_H2:
+        for phi_i in phi:
+            flame = PremixedFlame(phi_i, X_H2_i)
+            nu_u_i = flame.nu_u # Kinematic viscosity of the unburnt mixture [m^2/s]
+            T_ad_i = flame.T_ad # Adiabatic temperature [K]
+            s_l0_i = flame.s_l0 # Laminar flame speed [m/s]
+            nu_u.append(nu_u_i)
+            T_ad.append(T_ad_i)
+            s_l0.append(s_l0_i)
+    nu_u = np.array(nu_u)
+    T_ad = np.array(T_ad)
+    s_l0 = np.array(s_l0)
     
 
 #%% PLOTS
@@ -254,10 +273,10 @@ if __name__ == "__main__":
     # Plot adiabatic temperature versus equivalence ratio
     fig_name = 'T_ad_vs_phi'
     fig, ax = plt.subplots()
-    for i, X_H2 in enumerate(X_H2s):
-        x_1 = phis
-        y_1 = T_ads[3*i:3*i+3]
-        ax.scatter(x_1, y_1, marker='o', s=50, color=colors[2*i+1], edgecolors=colors[2*i], linewidths=None, label=f'{X_H2}', zorder=2)
+    for i, X_H2_i in enumerate(X_H2):
+        x_1 = phi
+        y_1 = T_ad[3*i:3*i+3]
+        ax.scatter(x_1, y_1, marker='o', s=50, color=colors[2*i+1], edgecolors=colors[2*i], linewidths=None, label=f'{X_H2_i}', zorder=2)
         ax.plot(x_1, y_1, c=colors[2*i+1], lw=2, zorder=1)
         
     # Set the labels and legend
@@ -275,10 +294,10 @@ if __name__ == "__main__":
     # Plot unstretched laminar flame speed versus equivalence ratio
     fig_name = 's_l0_vs_phi'
     fig, ax = plt.subplots()
-    for i, X_H2 in enumerate(X_H2s):
-        x_1 = phis
-        y_1 = s_l0s[3*i:3*i+3]
-        ax.scatter(x_1, y_1, marker='o', s=50, color=colors[2*i+1], edgecolors=colors[2*i], linewidths=None, label=f'{X_H2}', zorder=2)
+    for i, X_H2_i in enumerate(X_H2):
+        x_1 = phi
+        y_1 = s_l0[3*i:3*i+3]
+        ax.scatter(x_1, y_1, marker='o', s=50, color=colors[2*i+1], edgecolors=colors[2*i], linewidths=None, label=f'{X_H2_i}', zorder=2)
         ax.plot(x_1, y_1, c=colors[2*i+1], lw=2, zorder=1)
          
     # Set the labels and legend
