@@ -262,7 +262,7 @@ if __name__ == "__main__":
     s_l0 = np.array(s_l0)
     
 
-#%% PLOTS
+    #%% PLOTS
     
     # Create empty lists of figures, axes
     figs = []
@@ -312,7 +312,7 @@ if __name__ == "__main__":
     fig_names.append(fig_name)
 
         
-#%% SAVE THE FIGURES
+    #%% SAVE THE FIGURES
     
     # Specify the figures directory
     sep = os.path.sep # Gets the OS path separator.
