@@ -2,13 +2,17 @@
 
 ## 2025-2026 Turbomachinery Course
 
+- Teacher: Sikke Klein, s.a.klein@tudelft.nl
+
+- Teaching assistant (for this assignment): Rafael Pichler, r.pichler@tudelft.nl
+
 ## Preliminary preparations
 
 Before starting the assignement, you need to install a Python distribution on your machine. You can do so by following the instructions given [here](./installation_instructions.md).
 
 ## Introduction
 
-A key component of gas turbines is the combustor. In the combustor, the fuel and oxidiser (air) will be mixed and combusted to increase the enthalpy of the working fluid. Therefore, understanding the physics which govern combustion is essential for gas turbine design. This assignement aims to enhance your knowledge and understanding of combustion through the use of a 1-D flame simulation. The base code is provided with the questions. It contains a 1-D premixed flame simulation which computes the main flame parameters, such as the adiabatic flame temperature $T_{\mathrm{ad}}$ and the unstretched laminar flame speed $s_{l,0}$. The simulation also computes a series of mixture parameters, such as the kinematic viscosity of the unburnt mixture $\nu_u$.
+A key component of gas turbines is the combustor. In the combustor, the fuel and oxidiser (air) will be mixed and combusted to increase the enthalpy of the working fluid. Therefore, understanding the physics which govern combustion is essential for gas turbine design. This assignement aims to enhance your knowledge and understanding of combustion through the use of a 1-D flame simulation. The base code is provided with the questions. It contains a 1-D premixed flame simulation which computes the main flame parameters, such as the adiabatic flame temperature $`T_{\mathrm{ad}}`$ and the unstretched laminar flame speed ${s_{l,0}}$. The simulation also computes a series of mixture parameters, such as the kinematic viscosity of the unburnt mixture $\nu_u$.
 
 In order to run the simulation, you will have to specify the following unburnt mixture parameters: the equivalence ratio $\phi$ and hydrogen volume fraction in the fuel $X_{\mathrm{H_2},f}$. The unburnt mixture temperature and pressure are set to default values $T_u=20$ °C and $p_u=1$ atm. The equivalence ratio is an important parameter in premixed combustion, which reflects how close a certain mixture is to stoichiometry. It is defined as
 
@@ -86,20 +90,13 @@ Rafael Pichler, Adam Zeman, Luuk Altenburg
 
 ## License
 
-Copyright :copyright:2022-2025 Rafael Pichler, Adam Zeman, Luuk Altenburg
+Copyright (c) 2022-2025 Rafael Pichler, Adam Zeman, Luuk Altenburg
 
-This program is free software: you can redistribute it and/or modify
- it under the terms of the GNU General Public License as published by
- the Free Software Foundation, either version 3 of the License, or
- (at your option) any later version.
+This program is free software: you can redistribute it and/or modify  it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
 
-This program is distributed in the hope that it will be useful,
- but WITHOUT ANY WARRANTY; without even the implied warranty of
- MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
- GNU General Public License for more details.
+This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
 
-You should have received a copy of the GNU General Public License
- along with this program. If not, see <https://www.gnu.org/licenses/>.
+You should have received a copy of the GNU General Public License along with this program. If not, see <https://www.gnu.org/licenses/>.
 
 ## Project status
 

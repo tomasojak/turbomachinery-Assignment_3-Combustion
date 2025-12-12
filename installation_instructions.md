@@ -18,6 +18,8 @@ To use Python on your computer, you will need to create a Python environment int
 8. Open Spyder or any other IDE you installed, by entering the IDE name (`spyder`) in the Miniforge command prompt. 
 9. From your IDE, you can open and run the code similarly as in MATLAB for example.
 
+To re-open your IDE after installation is complete, simply open a Miniforge command prompt, activate your Python environment and enter the IDE name. The active environment is indicated between parentheses in the Miniforge command prompt.
+
 ### Packages
 
 The packages necessary to run this code are listed below.
