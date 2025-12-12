@@ -20,7 +20,11 @@ Before starting the assignement, you need to install a Python distribution on yo
 
 A key component of gas turbines is the combustor. In the combustor, the fuel and oxidiser (air) will be mixed and combusted to increase the enthalpy of the working fluid. Therefore, understanding the physics which govern combustion is essential for gas turbine design. This assignement aims to enhance your knowledge and understanding of combustion through the use of a 1-D flame simulation. The base code is provided with the questions. It contains a 1-D premixed flame simulation which computes the main flame parameters, such as the adiabatic flame temperature $T_{\mathrm{ad}}$ and the unstretched laminar flame speed $s_{l,0}$. The simulation also computes a series of mixture parameters, such as the kinematic viscosity of the unburnt mixture $\nu_u$.
 
-![1-D flame](./figures/1d_flame.svg "1-D flame")
+<img title="1-D flame" src="./figures/1d_flame.svg" alt="1-D flame" width="396" data-align="center">
+
+Schematic of a one-dimensional premixed flame (Law, *Combustion Physics*, 2010).
+
+---
 
 In order to run the simulation, you will have to specify the following unburnt mixture parameters: the equivalence ratio $\phi$ and hydrogen volume fraction in the fuel $X_{\mathrm{H_2},f}$. The unburnt mixture temperature and pressure are set to default values $T_u=20$ °C and $p_u=1$ atm. The equivalence ratio is an important parameter in premixed combustion, which reflects how close a certain mixture is to stoichiometry. It is defined as
 
@@ -49,6 +53,12 @@ Plot the adiabatic temperatures obtained for both fuels against the equivalence 
 Plot the laminar flame speeds obtained for both fuels against the equivalence ratio. What do you observe? Comment on the effect of the equivalence ratio and the fuel composition. What does this mean in the context of a gas turbine combustor? What are possible challenges caused by replacing natural gas by hydrogen in the fuel?
 
 ## Question 2
+
+<img src="./figures/bunsen_burner.svg" title="Bunsen burner" alt="Bunsen burner" data-align="center">
+
+Schematic of a premixed Bunsen flame (Law, *Combustion Physics*, 2010).
+
+---
 
 Let us now consider the case of a Bunsen burner. Assume that the Bunsen burner consists of a simple pipe of inner diameter $D=25$ mm, with the flame anchored at the burner rim. Also assume that fuel and oxidiser are homogeneously mixed upstream of the burner inlet, and that the flow inside the burner is incompressible and fully developed. The unburnt bulk velocity in the burner is $U_u=30$ m/s, and the integral length scale and integral eddy velocity (for turbulence) can be estimated as
 
