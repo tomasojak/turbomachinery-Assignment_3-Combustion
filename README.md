@@ -24,8 +24,6 @@ A key component of gas turbines is the combustor. In the combustor, the fuel and
 
 Schematic of a one-dimensional premixed flame (Law, *Combustion Physics*, 2010).
 
----
-
 In order to run the simulation, you will have to specify the following unburnt mixture parameters: the equivalence ratio $\phi$ and hydrogen volume fraction in the fuel $X_{\mathrm{H_2},f}$. The unburnt mixture temperature and pressure are set to default values $T_u=20$ °C and $p_u=1$ atm. The equivalence ratio is an important parameter in premixed combustion, which reflects how close a certain mixture is to stoichiometry. It is defined as
 
 $$
@@ -54,17 +52,15 @@ Plot the laminar flame speeds obtained for both fuels against the equivalence ra
 
 ## Question 2
 
-<img src="./figures/bunsen_burner.svg" title="Bunsen burner" alt="Bunsen burner" data-align="center">
-
-Schematic of a premixed Bunsen flame (Law, *Combustion Physics*, 2010).
-
----
-
 Let us now consider the case of a Bunsen burner. Assume that the Bunsen burner consists of a simple pipe of inner diameter $D=25$ mm, with the flame anchored at the burner rim. Also assume that fuel and oxidiser are homogeneously mixed upstream of the burner inlet, and that the flow inside the burner is incompressible and fully developed. The unburnt bulk velocity in the burner is $U_u=30$ m/s, and the integral length scale and integral eddy velocity (for turbulence) can be estimated as
 
 $$
 l_0 = \frac{D}{2} \quad \text{and} \quad u_0 = \frac{U_u}{20}.
 $$
+
+<img src="./figures/bunsen_burner.svg" title="Bunsen burner" alt="Bunsen burner" data-align="center">
+
+Schematic of a premixed Bunsen flame (Law, *Combustion Physics*, 2010).
 
 The Karlovitz number is a non-dimensional number which relates the laminar flame timescale $\tau_l$ to the Kolmogorov timescale of turbulent flow $\tau_\eta$. It is defined as
 

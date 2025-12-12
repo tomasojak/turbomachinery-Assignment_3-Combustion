@@ -241,8 +241,8 @@ if __name__ == "__main__":
     print(f"Running Cantera Version: {ct.__version__}")
     
     # Simulation parameters
-    X_H2 = np.array([0, 100], dtype=int) # fuel hydrogen fractionS [%]
-    phi = np.array([0.8, 1, 1.3]) # equivalence ratios [-]
+    X_H2 = np.array([], dtype=int) # fuel hydrogen fractions [%]
+    phi = np.array([]) # equivalence ratios [-]
     
     # Run the simulations and collect nu_u, T_ad and s_l0 in arrays
     nu_u = []
