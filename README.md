@@ -2,9 +2,15 @@
 
 ## 2025-2026 Turbomachinery Course
 
+## Contact people
+
 - Teacher: Sikke Klein, s.a.klein@tudelft.nl
 
 - Teaching assistant (for this assignment): Rafael Pichler, r.pichler@tudelft.nl
+
+## Submission
+
+Submit your assignment as a PDF report to [r.pichler@tudelft.nl](mailto:r.pichler@tudelft.nl). The submission deadline is **Friday 09 January 2025, 23:59**. Submit one report per group, and submit your Python code along with the report. Name the files according to the following format (SN stands for student number): SN1_SURNAME1_Givenname1_SN2_SURNAME2_Givenname2.
 
 ## Preliminary preparations
 
@@ -12,7 +18,11 @@ Before starting the assignement, you need to install a Python distribution on yo
 
 ## Introduction
 
-A key component of gas turbines is the combustor. In the combustor, the fuel and oxidiser (air) will be mixed and combusted to increase the enthalpy of the working fluid. Therefore, understanding the physics which govern combustion is essential for gas turbine design. This assignement aims to enhance your knowledge and understanding of combustion through the use of a 1-D flame simulation. The base code is provided with the questions. It contains a 1-D premixed flame simulation which computes the main flame parameters, such as the adiabatic flame temperature $`T_{\mathrm{ad}}`$ and the unstretched laminar flame speed ${s_{l,0}}$. The simulation also computes a series of mixture parameters, such as the kinematic viscosity of the unburnt mixture $\nu_u$.
+A key component of gas turbines is the combustor. In the combustor, the fuel and oxidiser (air) will be mixed and combusted to increase the enthalpy of the working fluid. Therefore, understanding the physics which govern combustion is essential for gas turbine design. This assignement aims to enhance your knowledge and understanding of combustion through the use of a 1-D flame simulation. The base code is provided with the questions. It contains a 1-D premixed flame simulation which computes the main flame parameters, such as the adiabatic flame temperature $T_{\mathrm{ad}}$ and the unstretched laminar flame speed $s_{l,0}$. The simulation also computes a series of mixture parameters, such as the kinematic viscosity of the unburnt mixture $\nu_u$.
+
+```
+![title](./figures/1d_flame.png)
+```
 
 In order to run the simulation, you will have to specify the following unburnt mixture parameters: the equivalence ratio $\phi$ and hydrogen volume fraction in the fuel $X_{\mathrm{H_2},f}$. The unburnt mixture temperature and pressure are set to default values $T_u=20$ °C and $p_u=1$ atm. The equivalence ratio is an important parameter in premixed combustion, which reflects how close a certain mixture is to stoichiometry. It is defined as
 
@@ -28,7 +38,7 @@ Air will always be used as an oxidiser, and it will be assumed that its composit
 
 ## Question 1
 
-Depending on your student number, use the following equivalence ratios:
+Depending on the lowest student number in your group, use the following equivalence ratios:
 
 - Even number: $\phi_1=0.8$, $\phi_2=1$ and $\phi_3=1.15$
 
