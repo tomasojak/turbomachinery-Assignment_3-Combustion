@@ -60,7 +60,7 @@ $$
 
 <img src="./figures/bunsen_burner.svg" title="Bunsen burner" alt="Bunsen burner" data-align="center">
 
-Schematic of a premixed Bunsen flame (Law, *Combustion Physics*, 2010).
+Schematic of a premixed Bunsen flame (adapted from Law, *Combustion Physics*, 2010).
 
 The Karlovitz number is a non-dimensional number which relates the laminar flame timescale $\tau_l$ to the Kolmogorov timescale of turbulent flow $\tau_\eta$. It is defined as
 
