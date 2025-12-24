@@ -74,9 +74,9 @@ Select one of the hydrogen-air mixtures of question 1 and compute the real flame
 
 - If the flow is laminar,
   
-  $$
-  s=s_{l,0}.
-  $$
+$$
+s=s_{l,0}.
+$$
 
 - If the flow is turbulent and $\mathrm{Ka}<1$,
 
@@ -86,9 +86,9 @@ $$
 
 - If the flow is turbulent and $\mathrm{Ka}>1$,
   
-  $$
-  s = s_t = s_{l,0}\, \sqrt{\frac{u_0 l_0}{\nu_u}}.
-  $$
+$$
+s = s_t = s_{l,0}\, \sqrt{\frac{u_0 l_0}{\nu_u}}.
+$$
 
 Justify your reasoning behind the computation of the flame speed. Compare the obtained flame speed with the laminar flame speed from question 1. What do you observe? What are the implications for combustion in typical engineering flows?
 
