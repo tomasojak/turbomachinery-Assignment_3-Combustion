@@ -165,7 +165,7 @@ class PremixedFlame:
         width = 0.03 # Sets the 1-D domain size [m].
         flame = ct.FreeFlame(mixture, width = width) # Creates an object for the freely-propagating premixed flames.
         flame.set_refine_criteria(ratio = 3, slope = 0.06, curve = 0.12) # Sets the domain refining criteria.
-        flame.solve(loglevel = 1, auto = True)
+        flame.solve(loglevel = 0, auto = True)
         
         s_l0 = flame.velocity[0] # The unstretched laminar flame speed [m/s].
         T_ad = mixture.T # The adiabatic flame temperature [K].
@@ -231,6 +231,10 @@ class PremixedFlame:
         self.alpha_b = alpha_b
 
 #%% 1-D FLAME SIMULATIONS
+output_file = os.path.join(script_dir, "flame_results.csv")
+
+with open(output_file, "w") as f:
+    f.write("H2_percent,phi,s_l0_m_per_s,nu_u_m2_per_s\n")
 
 if __name__ == "__main__":
 
@@ -241,8 +245,8 @@ if __name__ == "__main__":
     print(f"Running Cantera Version: {ct.__version__}")
     
     # Simulation parameters
-    X_H2 = np.array([], dtype=int) # fuel hydrogen fractions [%]
-    phi = np.array([]) # equivalence ratios [-]
+    X_H2 = np.array([0,100], dtype=int) # fuel hydrogen fractions [%]
+    phi = np.array([0.8,1,1.15]) # equivalence ratios [-]
     
     # Run the simulations and collect nu_u, T_ad and s_l0 in arrays
     nu_u = []
@@ -254,13 +258,15 @@ if __name__ == "__main__":
             nu_u_i = flame.nu_u # Kinematic viscosity of the unburnt mixture [m^2/s]
             T_ad_i = flame.T_ad # Adiabatic temperature [K]
             s_l0_i = flame.s_l0 # Laminar flame speed [m/s]
+            # Save to file immediately
+            with open(output_file, "a") as f:
+                f.write(f"{X_H2_i},{phi_i},{s_l0_i},{nu_u_i}\n")
             nu_u.append(nu_u_i)
             T_ad.append(T_ad_i)
             s_l0.append(s_l0_i)
     nu_u = np.array(nu_u)
     T_ad = np.array(T_ad)
     s_l0 = np.array(s_l0)
-    
 
     #%% PLOTS
     
