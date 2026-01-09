@@ -8,12 +8,18 @@ s_l0=2.2188282306851606 #m/s (laminar flame speed)
 nu_u=2.0737213151400035e-05 #m/s^2 (bulk viscosity)
 
 epsilon=np.power(u_0,3)/l_0 #rate of dissipation scale 
-u_eta=np.power(nu_u*epsilon,0.25) #Kolmogorov velocity 
-
-Ka=np.power(u_eta/s_l0,2) #Karlovitz number 
 
 Re= U_u*D/nu_u
 
+#alternative epsilon calculation 
+# I=0.16*np.power(Re, -1/8)
+# k=3/2*np.power((U_u)*I,2)
+# l=0.07*D
+# epsilon=np.power(0.09,3/4)*np.power(k,3/2)*np.power(l,-1)
+
+u_eta=np.power(nu_u*epsilon,0.25) #Kolmogorov velocity 
+
+Ka=np.power(u_eta/s_l0,2) #Karlovitz number 
 s=s_l0*np.power(1+np.power(u_0/s_l0,2),0.5) #flame speed 
 
 print("Re", Re, "Ka", Ka, "s", s)
